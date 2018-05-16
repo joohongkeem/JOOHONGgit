@@ -1,0 +1,56 @@
+세팅 - 개발자모드 - 4번째 리눅스 머시기 다운로드
+재부팅 win + R 실행 - bash - 다운로드
+아이디 패스워드 설정 - gcc후 설치(sudo gcc어쩌구)
+그다음 sudo apt-get update
+
+a.c 미리 만들어준다
+cat acc.c 치면 코드내용이나온다.
+
+gcc aaa.c 하고
+./a.out 하면 결과 출력
+(./run으로 실행가능)
+gcc --save-temps -o run aaa.c ★★★★★★
+치면 폴더에 다양한 파일 나오는데
+그 중에 aaa.i라는 파일을 visual studio로 드래그하면 
+스크롤 내려서 확인해보면
+모두 분석된 코드가 나온다 (전처리기 대입다한거)
+
+
+typedef char * vva_list;
+
+
+
+
+
+float average(int num,...)
+{
+ vva_list arg_ptr;
+ int cnt,total=0;
+
+ ( arg_ptr = (vva_list)&num + ( (sizeof(num) + sizeof(int) - 1) & ~(sizeof(int) - 1) ) );
+                                        4          3                 3
+	>> 즉 num의 주소를 char형으로 변환하고 그 뒤에 4를 더한다.
+ for(cnt=0;cnt<num;cnt++)
+  total += ( *(int *)((arg_ptr += ( (sizeof(int) + sizeof(int) - 1) & ~(sizeof(int) - 1) )) - ( (sizeof(int) + sizeof(int) - 1) & ~(sizeof(int) - 1) )) );
+		>> 정리해보면 total += (*(int*)((arg_ptr += 4) - 4));
+						 4영구증가    4잠시감소
+						 4를 영구증가시키고 하나 위에꺼 값을 total에 더한다
+						 WHY? 어차피 뺄건데 왜 미리 증가시켜놓지?
+						 >> 속도!!! 미리 증가해놓으면 다음번에 훨씬 빨리찾는다 (Cache)
+						 
+ ( arg_ptr = (vva_list)0 );
+	>> 0을 char로 변경하여 arg_ptr에 넣겠다 -> NULL을 넣겠다
+ return((float)total/num);
+}
+
+int main(void) {
+   float x;
+
+   x = average(10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+   printf("first avg is %f\n", x);
+
+   return 0;
+}
+
+

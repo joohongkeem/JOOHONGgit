@@ -1,0 +1,7 @@
+https://phj790122.blog.me/
+
+커널
+리눅스 커널 분석 환경 구축
+
+wget "주소" - 소스 다운
+apt-get install - 바이너리 파일 다운

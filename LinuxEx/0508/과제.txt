@@ -1,0 +1,1 @@
+tlpi-book/fileio 들어가서 vim seek_io.c 한 후에 주석처리 모두 해보기

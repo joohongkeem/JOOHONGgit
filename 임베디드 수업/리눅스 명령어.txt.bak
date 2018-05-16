@@ -1,0 +1,33 @@
+ls : 현재 디렉토리 확인
+ls -al : 자세한 정보
+
+mkdir gitTest : gitTest 디렉토리 만들기
+rmdir gitTest : gitTest 디렉토리 삭제하기
+
+cd gitTest : gitTest 디렉토리로 들어가기
+  (앞 몇글자 치고 TAB누르는게 더 편리, 비슷한이름있으면 tab누르면 또 알려준다.)
+cd .. : 상위디렉토리로 가기
+
+
+git init : git이 설치되어있지 않으므로 실행 안되고, 밑에 필요한 명령어 알려줌
+(sudo apt-get install git)
+ *최신버전인지 확인 ? sudo(슈퍼바이저두) apt-get(패키지 관리자로 실행) update git
+ >> 업데이트 먼저하고 설치명령어 쓰는게 좋다
+
+
+이제 git init이 먹힌다. (gitTest디렉토리안에 .git디렉토리 생성)
+
+
+gedit hello.c 한다음에
+
+HelloWolrd~~~입력 저장
+
+
+순서는 add commit remote push?
+
+git add hello.c
+git commit -m "create hello.c"
+git remote add origin "주소"
+git push -u origin master
+
+하고 깃들어가보면 있다

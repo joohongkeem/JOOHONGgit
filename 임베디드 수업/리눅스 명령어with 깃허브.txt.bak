@@ -1,0 +1,55 @@
+ls : 현재 디렉토리 확인
+ls -al : 자세한 정보
+
+mkdir gitTest : gitTest 디렉토리 만들기
+rmdir gitTest : gitTest 디렉토리 삭제하기
+rm 은 그냥 막 제거?
+pwd : 현재 디렉토리
+
+clear : 화면지우기
+
+cd gitTest : gitTest 디렉토리로 들어가기
+  (앞 몇글자 치고 TAB누르는게 더 편리, 비슷한이름있으면 tab누르면 또 알려준다.)
+cd .. : 상위디렉토리로 가기
+
+
+git init : git이 설치되어있지 않으므로 실행 안되고, 밑에 필요한 명령어 알려줌
+(sudo apt-get install git)
+ *최신버전인지 확인 ? sudo(슈퍼바이저두) apt-get(패키지 관리자로 실행) update git
+ >> 업데이트 먼저하고 설치명령어 쓰는게 좋다
+
+
+이제 git init이 먹힌다. (gitTest디렉토리안에 .git디렉토리 생성)
+
+
+gedit hello.c 한다음에
+
+HelloWolrd~~~입력 저장
+(vim hello.c 하면 열린다)
+(esc 콜론 wq하면 나가짐)
+(gcc -o hello.o hello.c 하면 .o파일 생성)
+(gcc -o staticEx staticEx.c 하면 컴파일)
+(그럼 컴파일파일이 생성되는데 그땐 ./staticEx 하면 된다 ./는 현재디렉토리)
+순서는 add commit remote push?
+
+git add hello.c
+git commit -m "create hello.c"
+// 여기 커밋 ""안에 얼마나 자세히 달아주느냐가 가장 중요한 작업중 하나다
+git remote add origin "주소"
+git push -u origin master
+
+하고 깃들어가보면 있다
+
+ctrl+shift+c,v 로 해야한다.
+
+
+cd 파일명 ../이동할위치
+mv 파일명 TEST0424/ 하면 글로 이동됨
+
+
+천천히 복습
+-깃허브 로그인 >> 새로운 프로젝트
+ 이름정하고 디스크립션 정하고 퍼블릭 하고 레포지터리 생성
+
+우분투에서 적당한 위치들어가서 폴더(TEST0424)만들고
+깃허브데스크탑에서 clone 레포지터리누르고 (TEST0424)선택 
