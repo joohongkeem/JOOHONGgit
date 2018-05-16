@@ -1,0 +1,23 @@
+gdb --args ./Filename
+start
+disassemble (or disas)		// show remain codes
+				// => means will excute.. (NOT YET)
+disas main, +100		// shows until from main to main+100
+info registers r0 r1 r2 r3	// show information of registers r0~r3
+info all-register		// show information of all registers
+p $r0 = 8			// change the value of r0 forcibly
+p myvar1			// show the data in myvar1
+set my var1 = 6			// change the value in myvar1
+stepi				// next step
+continue			// excute all remain codes
+
+// how to make break point?
+break *0x0001042c
+info break : information of break point
+d 4 : delete break point 4
+cl - delete all break point
+
+continue : keep going ~~~~~
+c : keep going to until next break point
+
+quit				// if you want to quit
